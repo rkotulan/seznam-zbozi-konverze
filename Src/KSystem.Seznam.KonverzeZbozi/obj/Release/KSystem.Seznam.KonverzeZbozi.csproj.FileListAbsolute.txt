@@ -1,0 +1,6 @@
+X:\Develop\PoC\SeznamMereniKonverzi\Src\KSystem.Seznam.KonverzeZbozi\bin\Release\KSystem.Seznam.KonverzeZbozi.dll
+X:\Develop\PoC\SeznamMereniKonverzi\Src\KSystem.Seznam.KonverzeZbozi\bin\Release\KSystem.Seznam.KonverzeZbozi.pdb
+X:\Develop\PoC\SeznamMereniKonverzi\Src\KSystem.Seznam.KonverzeZbozi\bin\Release\Newtonsoft.Json.dll
+X:\Develop\PoC\SeznamMereniKonverzi\Src\KSystem.Seznam.KonverzeZbozi\bin\Release\Newtonsoft.Json.xml
+X:\Develop\PoC\SeznamMereniKonverzi\Src\KSystem.Seznam.KonverzeZbozi\obj\Release\KSystem.Seznam.KonverzeZbozi.dll
+X:\Develop\PoC\SeznamMereniKonverzi\Src\KSystem.Seznam.KonverzeZbozi\obj\Release\KSystem.Seznam.KonverzeZbozi.pdb

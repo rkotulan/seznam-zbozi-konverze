@@ -18,7 +18,7 @@ namespace KSystem.Seznam.KonverzeZbozi.Infrastructure
         {
             var res = base.CreateProperty(member, memberSerialization);
 
-            var attrs = member.GetCustomAttributes(typeof(JsonPropertyAttribute), true);
+            var attrs = member.GetCustomAttributes(typeof(JsonPropertyAttribute), true).ToArray();
             if (attrs.Any())
             {
                 var attr = attrs[0] as JsonPropertyAttribute;

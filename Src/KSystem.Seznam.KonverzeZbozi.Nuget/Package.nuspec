@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>KonverzeZbozi</id>
+    <version>1.0.1</version>
+    <title>Měření konverzí na Zboží.cz pro C#</title>
+    <authors>Rudolf Kotulán</authors>
+    <owners>K-system.CZ s.r.o.</owners>
+    <description>
+      C# kód pro pokročilé měření konverzí na Zboží.cz
+    </description>
+    <releaseNotes>
+      <![CDATA[
+            For full release notes see https://github.com/rkotulan/seznam-zbozi-konverze
+            ]]>
+    </releaseNotes>
+    <summary>
+      C# kód pro pokročilé měření konverzí na Zboží.cz
+    </summary>
+    <language>cs-CZ</language>
+    <projectUrl>https://github.com/rkotulan/seznam-zbozi-konverze</projectUrl>
+    <licenseUrl>https://github.com/rkotulan/seznam-zbozi-konverze/blob/master/LICENSE</licenseUrl>
+    <iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <copyright>Copyright © K-system.CZ s.r.o.</copyright>
+    <dependencies>
+        <group>
+          <dependency id="Newtonsoft.Json" version="9.0.1" />
+        </group>
+    </dependencies>    
+    <tags>zbozi api konverze</tags>
+  </metadata>
+  <files>
+    <file src="lib\" target="lib" />
+    <file src="tools\" target="tools" />
+    <file src="content\" target="content" />
+  </files>
+</package>

@@ -8,20 +8,21 @@ namespace KSystem.Seznam.KonverzeZbozi.Services
 {
     using System.IO;
     using System.Net;
-    using System.Text;
+    using System.Threading.Tasks;
 
     using KSystem.Seznam.KonverzeZbozi.Entities;
+    using KSystem.Seznam.KonverzeZbozi.Extensions;
     using KSystem.Seznam.KonverzeZbozi.Infrastructure;
 
     using Newtonsoft.Json;
 
     public class ZboziKonverzeService
     {
+        private readonly JsonSerializerSettings jsonSerializerSettings;
+
         private readonly string shopId;
 
         private readonly UrlResolver urlResolver;
-
-        private readonly JsonSerializerSettings jsonSerializerSettings;
 
         /// <summary>
         ///     Service pro odesláí objednávky na zbozi.cz pro měření konverzí.
@@ -34,33 +35,19 @@ namespace KSystem.Seznam.KonverzeZbozi.Services
         {
             this.shopId = shopId;
             this.urlResolver = new UrlResolver();
-            this.jsonSerializerSettings = new JsonSerializerSettings
-                                              {
-                                                  ContractResolver = new CamelCaseContractResolver()
-                                              };
+            this.jsonSerializerSettings = new JsonSerializerSettings();
+            this.jsonSerializerSettings.ContractResolver = new CamelCaseContractResolver();
         }
 
-        public ZboziSendResponse Send(ZboziOrder zboziOrder)
+        public async Task<ZboziSendResponse> SendAsync(ZboziOrder zboziOrder)
         {
-            var json = this.GetJsonString(zboziOrder);
-            var postBytes = Encoding.UTF8.GetBytes(json);
+            var postBytes = this.GetJsonString(zboziOrder).ToUtf8Bytes();
 
-            var request = this.GetWebRequest(zboziOrder, postBytes.Length);
-            this.WritePostDataToRequest(request, postBytes);
+            var request = this.GetWebRequest(zboziOrder);
+            await this.WritePostDataToRequest(request, postBytes);
+            var result = await this.GetStringResultFromRequest(request);
 
-            var result = GetStringResultFromRequest(request);
             return JsonConvert.DeserializeObject<ZboziSendResponse>(result, this.jsonSerializerSettings);
-        }
-
-        private static string GetStringResultFromRequest(HttpWebRequest request)
-        {
-            var response = (HttpWebResponse)request.GetResponse();
-            string result;
-            using (var rdr = new StreamReader(response.GetResponseStream()))
-            {
-                result = rdr.ReadToEnd();
-            }
-            return result;
         }
 
         private string GetJsonString(ZboziOrder zboziOrder)
@@ -68,22 +55,35 @@ namespace KSystem.Seznam.KonverzeZbozi.Services
             return JsonConvert.SerializeObject(zboziOrder, Formatting.Indented, this.jsonSerializerSettings);
         }
 
-        private HttpWebRequest GetWebRequest(ZboziOrder zboziOrder, long contentLength)
+        private async Task<string> GetStringResultFromRequest(WebRequest request)
+        {
+            var response = await request.GetResponseAsync();
+            if (response != null)
+            {
+                using (var reader = new StreamReader(response.GetResponseStream()))
+                {
+                    return await reader.ReadToEndAsync();
+                }
+            }
+
+            return string.Empty;
+        }
+
+        private HttpWebRequest GetWebRequest(ZboziOrder zboziOrder)
         {
             var request = WebRequest.CreateHttp(this.urlResolver.Resolve(this.shopId, zboziOrder.Sandbox));
             request.Method = "POST";
+            request.ContentType = "application/json";
 
-            request.ContentType = "application/json; charset=UTF-8";
-            request.Accept = "application/json";
-            request.ContentLength = contentLength;
             return request;
         }
 
-        private void WritePostDataToRequest(HttpWebRequest request, byte[] postBytes)
+        private async Task WritePostDataToRequest(WebRequest request, byte[] postBytes)
         {
-            var requestStream = request.GetRequestStream();
-            requestStream.Write(postBytes, 0, postBytes.Length);
-            requestStream.Close();
+            using (var postStream = await request.GetRequestStreamAsync())
+            {
+                await postStream.WriteAsync(postBytes, 0, postBytes.Length);
+            }
         }
     }
 }

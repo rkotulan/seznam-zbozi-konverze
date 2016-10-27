@@ -5,9 +5,10 @@ X:\Develop\PoC\SeznamMereniKonverzi\ClassLibrary1\bin\Debug\Newtonsoft.Json.xml
 X:\Develop\PoC\SeznamMereniKonverzi\ClassLibrary1\obj\Debug\KSystem.Seznam.KonverzeZbozi.csprojResolveAssemblyReference.cache
 X:\Develop\PoC\SeznamMereniKonverzi\ClassLibrary1\obj\Debug\KSystem.Seznam.KonverzeZbozi.dll
 X:\Develop\PoC\SeznamMereniKonverzi\ClassLibrary1\obj\Debug\KSystem.Seznam.KonverzeZbozi.pdb
-X:\Develop\PoC\SeznamMereniKonverzi\Src\KSystem.Seznam.KonverzeZbozi\obj\Debug\KSystem.Seznam.KonverzeZbozi.dll
-X:\Develop\PoC\SeznamMereniKonverzi\Src\KSystem.Seznam.KonverzeZbozi\obj\Debug\KSystem.Seznam.KonverzeZbozi.pdb
 X:\Develop\PoC\SeznamMereniKonverzi\Src\KSystem.Seznam.KonverzeZbozi\bin\Debug\KSystem.Seznam.KonverzeZbozi.dll
 X:\Develop\PoC\SeznamMereniKonverzi\Src\KSystem.Seznam.KonverzeZbozi\bin\Debug\KSystem.Seznam.KonverzeZbozi.pdb
 X:\Develop\PoC\SeznamMereniKonverzi\Src\KSystem.Seznam.KonverzeZbozi\bin\Debug\Newtonsoft.Json.dll
 X:\Develop\PoC\SeznamMereniKonverzi\Src\KSystem.Seznam.KonverzeZbozi\bin\Debug\Newtonsoft.Json.xml
+X:\Develop\PoC\SeznamMereniKonverzi\Src\KSystem.Seznam.KonverzeZbozi\obj\Debug\KSystem.Seznam.KonverzeZbozi.dll
+X:\Develop\PoC\SeznamMereniKonverzi\Src\KSystem.Seznam.KonverzeZbozi\obj\Debug\KSystem.Seznam.KonverzeZbozi.pdb
+X:\Develop\PoC\SeznamMereniKonverzi\Src\KSystem.Seznam.KonverzeZbozi\obj\Debug\KSystem.Seznam.KonverzeZbozi.csprojResolveAssemblyReference.cache

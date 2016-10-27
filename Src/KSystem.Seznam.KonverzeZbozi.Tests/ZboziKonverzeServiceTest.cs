@@ -19,7 +19,7 @@ namespace KSystem.Seznam.KonverzeZbozi.Tests
         [TestMethod]
         public void SendDataToServer()
         {
-            // odeslání je možné ověžit na https://sandbox.zbozi.cz/ 
+            // odeslání je možné ověřit na https://sandbox.zbozi.cz/ 
             var tajnyKlic = "b94161aa8e646800952a73c6a00cc707";
             var provozovnaId = "58c831510f64b07b405334f64a5d0a1f";
 
@@ -30,7 +30,7 @@ namespace KSystem.Seznam.KonverzeZbozi.Tests
             order.DeliveryPrice = 15;
             order.DeliveryType = "Česká pošta";
             order.Email = "agent.smith@matrix.com";
-            order.OrderId = "1926321340";
+            order.OrderId = "1926321343";
             order.OtherCosts = 0;
             order.PaymentType = "Kartou";
             order.PrivateKey = tajnyKlic;
@@ -39,9 +39,10 @@ namespace KSystem.Seznam.KonverzeZbozi.Tests
                 new ZboziOrderItem { ItemId = "10005", ProductName = "Kosile", Quantity = 2, UnitPrice = 217.5M });
 
             var service = new ZboziKonverzeService(provozovnaId);
-            var response = service.Send(order);
+            var response = service.SendAsync(order);
+            response.Wait();
 
-            Assert.AreEqual(200, response.Status);
+            Assert.AreEqual(200, response.Result.Status);
         }
     }
 }
