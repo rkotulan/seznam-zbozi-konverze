@@ -1,4 +1,0 @@
-X:\Develop\PoC\SeznamMereniKonverzi\Src\KSystem.Seznam.KonverzeZbozi.Nuget\bin\Debug\KSystem.Seznam.KonverzeZbozi.Nuget.dll
-X:\Develop\PoC\SeznamMereniKonverzi\Src\KSystem.Seznam.KonverzeZbozi.Nuget\bin\Debug\KSystem.Seznam.KonverzeZbozi.Nuget.pdb
-X:\Develop\PoC\SeznamMereniKonverzi\Src\KSystem.Seznam.KonverzeZbozi.Nuget\obj\Debug\KSystem.Seznam.KonverzeZbozi.Nuget.dll
-X:\Develop\PoC\SeznamMereniKonverzi\Src\KSystem.Seznam.KonverzeZbozi.Nuget\obj\Debug\KSystem.Seznam.KonverzeZbozi.Nuget.pdb

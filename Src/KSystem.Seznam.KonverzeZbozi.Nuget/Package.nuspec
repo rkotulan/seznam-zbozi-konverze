@@ -1,34 +1,29 @@
 <?xml version="1.0"?>
-<package >
+<package>
   <metadata>
     <id>KonverzeZbozi</id>
-    <version>1.0.1</version>
-    <title>Měření konverzí na Zboží.cz pro C#</title>
-    <authors>Rudolf Kotulán</authors>
-    <owners>K-system.CZ s.r.o.</owners>
-    <description>
-      C# kód pro pokročilé měření konverzí na Zboží.cz
-    </description>
-    <releaseNotes>
-      <![CDATA[
-            For full release notes see https://github.com/rkotulan/seznam-zbozi-konverze
-            ]]>
-    </releaseNotes>
-    <summary>
-      C# kód pro pokročilé měření konverzí na Zboží.cz
-    </summary>
-    <language>cs-CZ</language>
-    <projectUrl>https://github.com/rkotulan/seznam-zbozi-konverze</projectUrl>
-    <licenseUrl>https://github.com/rkotulan/seznam-zbozi-konverze/blob/master/LICENSE</licenseUrl>
-    <iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>
+    <version>2.0.0</version>
+    <authors>Rudolf Kotul�n</authors>
+    <owners>Rudolf Kotul�n</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <copyright>Copyright © K-system.CZ s.r.o.</copyright>
-    <dependencies>
-        <group>
-          <dependency id="Newtonsoft.Json" version="9.0.1" />
-        </group>
-    </dependencies>    
+    <licenseUrl>https://github.com/rkotulan/seznam-zbozi-konverze/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/rkotulan/seznam-zbozi-konverze</projectUrl>
+    <iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>
+    <description>C# k�d pro pokrocil� meren� konverz� na Zbo��.cz</description>
+    <releaseNotes>For full release notes see https://github.com/rkotulan/seznam-zbozi-konverze</releaseNotes>
+    <copyright>Copyright � K-system.CZ s.r.o.</copyright>
     <tags>zbozi api konverze</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.1">
+        <dependency id="Newtonsoft.Json" version="11.0.2" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETCoreApp2.0">
+        <dependency id="Newtonsoft.Json" version="11.0.2" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Newtonsoft.Json" version="11.0.2" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
   </metadata>
   <files>
     <file src="lib\" target="lib" />
